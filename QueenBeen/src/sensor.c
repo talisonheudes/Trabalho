@@ -102,6 +102,7 @@ void buscarSensor() {
             printf("ID: %d\n", sensores[i].id);
             printf("Tipo: %s\n", sensores[i].tipo);
             printf("Valor: %.2f\n", sensores[i].valor);
+            printf("ID associado: %d", sensores[i].abelhaId);
             encontrou = 1;
         }
     }

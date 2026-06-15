@@ -16,7 +16,7 @@ void mediaProducaoMel() {
     for (int i = 0; i < qtdA; i++) soma += abelhas[i].producaoMel;
     float media = soma / qtdA;
     
-    printf("Media geral de producao de mel: %.2f kg/mes\n", media);
+    printf("Media geral de producao de mel: %.6f kg/mes\n", media);
     pausar();
 }
 

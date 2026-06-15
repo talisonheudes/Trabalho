@@ -44,7 +44,7 @@ void listarAbelhas() {
         printf("Nome popular: %s\n", abelhas[i].nomePopular);
         printf("Nome cientifico: %s\n", abelhas[i].nomeCientifico);
         printf("Regiao: %s\n", abelhas[i].regiao);
-        printf("Producao de mel: %.2f kg/mes\n", abelhas[i].producaoMel);
+        printf("Producao de mel: %.6f kg/mes\n", abelhas[i].producaoMel);
         printf("\n");
     }
     pausar();
@@ -73,7 +73,7 @@ void alterarAbelha() {
             printf("  Nome popular      : %s\n", abelhas[i].nomePopular);
             printf("  Nome cientifico   : %s\n", abelhas[i].nomeCientifico);
             printf("  Regiao            : %s\n", abelhas[i].regiao);
-            printf("  Producao de mel   : %.2f kg/mes\n", abelhas[i].producaoMel);
+            printf("  Producao de mel   : %.6f kg/mes\n", abelhas[i].producaoMel);
             printf("==============================\n");
 
             printf("Digite os novos dados: \n");
@@ -114,7 +114,7 @@ void buscarAbelha() {
             printf("Nome popular: %s\n", abelhas[i].nomePopular);
             printf("Nome cientifico: %s\n", abelhas[i].nomeCientifico);
             printf("Regiao: %s\n", abelhas[i].regiao);
-            printf("Producao: %.2f kg/mes\n", abelhas[i].producaoMel);
+            printf("Producao: %.6f kg/mes\n", abelhas[i].producaoMel);
             encontrou = 1;
         }
     }
