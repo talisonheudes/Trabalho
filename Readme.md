@@ -8,7 +8,7 @@
 
 **Integrantes:**
 
-* Talison Heuddes Pereira Leal
+* Talison Heuddes
 * Kauan Sousa
 * Samuel Leal
 
