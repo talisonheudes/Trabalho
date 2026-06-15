@@ -1,4 +1,4 @@
-# 🐝 BeeVision – Sistema de Identificação e Monitoramento de Abelhas
+# 🐝 QueenBeen – Sistema de Identificação e Monitoramento de Abelhas
 
 ## 📋 Informações do Projeto
 
@@ -16,7 +16,7 @@
 
 ## 📖 Sobre o Projeto
 
-O **BeeVision** é um sistema desenvolvido em linguagem C para auxiliar no cadastro, monitoramento e identificação de abelhas sem ferrão.
+O **QueenBeen** é um sistema desenvolvido em linguagem C para auxiliar no cadastro, monitoramento e identificação de abelhas sem ferrão.
 
 O projeto permite gerenciar informações sobre diferentes espécies de abelhas, sensores ambientais associados às colmeias e realizar classificações baseadas nos dados cadastrados.
 
@@ -67,15 +67,17 @@ O projeto permite gerenciar informações sobre diferentes espécies de abelhas,
 ## 📁 Estrutura do Projeto
 
 ```text
-BeeVision/
+QueenBeen/
 │
 ├── include/
 │   ├── abelha.h
+│   ├── relatorio.h
 │   ├── sensor.h
 │   └── utils.h
 │
 ├── src/
 │   ├── abelha.c
+│   ├── relatorio.c
 │   ├── sensor.c
 │   └── utils.c
 │
