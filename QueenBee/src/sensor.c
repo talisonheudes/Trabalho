@@ -15,7 +15,6 @@ void cadastrarSensor() {
         return;
     }
     
-
     if (qtdS >= MAX_SENSORES) {
         printf("\033[31mLimite de sensores atingido!\033[0m\n");
         pausar();
@@ -24,11 +23,37 @@ void cadastrarSensor() {
     
     Sensor novo;
     novo.id = qtdS;
-    lerString("Tipo do sensor (temperatura/umidade/luminosidade): ", novo.tipo, 50);
+    
+    // Opções de tipo de sensor
+    int opcaoTipo;
+    printf("Tipos de sensor:\n");
+    printf("1 - Temperatura\n");
+    printf("2 - Umidade\n");
+    printf("3 - Luminosidade\n");
+    printf("Escolha o tipo do sensor: ");
+    scanf("%d", &opcaoTipo);
+    getchar(); // Limpa o buffer
+    
+    switch(opcaoTipo) {
+        case 1:
+            strcpy(novo.tipo, "temperatura");
+            break;
+        case 2:
+            strcpy(novo.tipo, "umidade");
+            break;
+        case 3:
+            strcpy(novo.tipo, "luminosidade");
+            break;
+        default:
+            printf("\033[31mOpcao invalida! Usando temperatura como padrao.\033[0m\n");
+            strcpy(novo.tipo, "temperatura");
+            break;
+    }
+    
     novo.valor = lerFloat("Valor do sensor: ", 0);
     novo.abelhaId = lerInteiro("ID da abelha associada: ", 0, qtdA - 1);
     
-    sensores[qtdS++] = novo; //nova também é uma variável da estrutura Abelha
+    sensores[qtdS++] = novo;
     printf("\n\033[32mSensor cadastrado com sucesso!\033[0m\n");
     pausar();
 }
