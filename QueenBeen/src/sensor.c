@@ -7,7 +7,7 @@ int qtdS = 0;
 
 void cadastrarSensor() {
     limparTela();
-    printf("========== CADASTRAR SENSOR ==========\n\n");
+    printf("\033[33m========== CADASTRAR SENSOR ==========\033[0m\n\n");
     
     if (qtdA == 0) {
         printf("Nao ha abelhas cadastradas! Cadastre uma abelha primeiro.\n");
@@ -17,7 +17,7 @@ void cadastrarSensor() {
     
 
     if (qtdS >= MAX_SENSORES) {
-        printf("Limite de sensores atingido!\n");
+        printf("\033[31mLimite de sensores atingido!\033[0m\n");
         pausar();
         return;
     }
@@ -29,13 +29,13 @@ void cadastrarSensor() {
     novo.abelhaId = lerInteiro("ID da abelha associada: ", 0, qtdA - 1);
     
     sensores[qtdS++] = novo; //nova também é uma variável da estrutura Abelha
-    printf("\nSensor cadastrado com sucesso!\n");
+    printf("\n\033[32mSensor cadastrado com sucesso!\033[0m\n");
     pausar();
 }
 
 void listarSensores() {
     limparTela();
-    printf("========== LISTAR SENSORES ==========\n\n");
+    printf("\033[33m========== LISTAR SENSORES ==========\033[0m\n\n");
     
     if (qtdS == 0) {
         printf("Nao ha sensores cadastrados!\n");
@@ -56,10 +56,10 @@ void listarSensores() {
 
 void alterarSensor() {
     limparTela();
-    printf("========== ALTERAR SENSOR ==========\n\n");
+    printf("\033[33m========== ALTERAR SENSOR ==========\033[0m\n\n");
     
     if (qtdS == 0) {
-        printf("Nao ha sensores cadastrados!\n");
+        printf("\033[31mNao ha sensores cadastrados!\033[0m\n");
         pausar();
         return;
     }
@@ -85,7 +85,7 @@ void alterarSensor() {
 
 void buscarSensor() {
     limparTela();
-    printf("========== BUSCAR SENSOR ==========\n\n");
+    printf("\033[33m========== BUSCAR SENSOR ==========\033[0m\n\n");
     
     if (qtdS == 0) {
         printf("Nao ha sensores cadastrados!\n");
@@ -113,10 +113,10 @@ void buscarSensor() {
 
 void removerSensor() {
     limparTela();
-    printf("========== REMOVER SENSOR ==========\n\n");
+    printf("\033[33m========== REMOVER SENSOR ==========\033[0m\n\n");
     
     if (qtdS == 0) {
-        printf("Nao ha sensores cadastrados!\n");
+        printf("\033[31mNao ha sensores cadastrados!\033[0m\n");
         pausar();
         return;
     }
@@ -130,7 +130,7 @@ void removerSensor() {
                 sensores[j].id = j;
             }
             qtdS--;
-            printf("\nSensor removido com sucesso!\n");
+            printf("\n\033[32mSensor removido com sucesso!\033[0m\n");
             pausar();
             return;
         }
@@ -143,16 +143,16 @@ void menuSensores() {
     int op;
     do {
         limparTela();
-        printf("========== GERENCIAR SENSORES ==========\n");
+        printf("\033[33m========== GERENCIAR SENSORES ==========\033[0m\n");
         printf("1 - Cadastrar sensor\n");
         printf("2 - Listar sensores\n");
         printf("3 - Buscar sensor por abelha\n");
         printf("4 - alterar sensor\n");
         printf("5 - Remover sensor\n");
         printf("0 - Voltar ao menu principal\n");
-        printf("=======================================\n");
+        printf("\033[33m=======================================\033[0m\n");
         
-        op = lerInteiro("Opcao: ", 0, 5);
+        op = lerInteiro("\033[33mOpcao:\033[0m ", 0, 5);
         
         switch (op) {
             case 1: cadastrarSensor(); break;

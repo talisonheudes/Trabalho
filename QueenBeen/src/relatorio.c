@@ -4,7 +4,7 @@
 
 void mediaProducaoMel() {
     limparTela();
-    printf("========== MEDIA DE PRODUCAO ==========\n\n");
+    printf("\033[33m========== MEDIA DE PRODUCAO ==========\033[0m\n\n");
     
     if (qtdA == 0) {
         printf("Nao ha abelhas cadastradas!\n");
@@ -22,7 +22,7 @@ void mediaProducaoMel() {
 
 void mediaValorSensores() {
     limparTela();
-    printf("========== MEDIA DOS SENSORES ==========\n\n");
+    printf("\033[33m========== MEDIA DOS SENSORES ==========\033[0m\n\n");
     
     if (qtdS == 0) {
         printf("Nao ha sensores cadastrados!\n");
@@ -40,10 +40,10 @@ void mediaValorSensores() {
 
 void quantidadePorRegiao() {
     limparTela();
-    printf("========== ABELHAS POR REGIAO ==========\n\n");
+    printf("\033[33m========== ABELHAS POR REGIAO ==========\033[33m\n\n");
     
     if (qtdA == 0) {
-        printf("Nao ha abelhas cadastradas!\n");
+        printf("\033[31mNao ha abelhas cadastradas!\033[0m\n");
         pausar();
         return;
     }
@@ -71,7 +71,7 @@ void quantidadePorRegiao() {
 
 void identificador() {
     limparTela();
-    printf("========== BEEVISION ==========\n\n");
+    printf("\033[33m========== BEEVISION ==========\n\n");
     
     if (qtdA == 0) {
         printf("Nao ha abelhas cadastradas!\n");
@@ -93,16 +93,16 @@ void identificador() {
     scanf("%d", &ferrao);
 
     if ((cor == 'A' || cor == 'a') && tamanho > 10) {
-        printf("Especie identificada: Apis mellifera (Abelha europeia)\n");
+        printf("\033[32mEspecie identificada: Apis mellifera (Abelha europeia)\033[0m\n");
     }
     else if ((cor == 'P' || cor == 'p') && tamanho < 8) {
-        printf("Especie identificada: Jatai (Tetragonisca angustula)\n");
+        printf("\033[32mEspecie identificada: Jatai (Tetragonisca angustula)\033[0m\n");
     }
     else if (ferrao == 1) {
-        printf("Especie identificada: Mandaguari (Scaptotrigona postica)\n");
+        printf("\033[32mEspecie identificada: Mandaguari (Scaptotrigona postica)\033[0m\n");
     }
     else {
-        printf("Especie desconhecida\n");
+        printf("\033[31mEspecie desconhecida\n\033[0m]");
     }
     
     printf("\n==========================================\n");
@@ -113,15 +113,15 @@ void menuRelatorios() {
     int op;
     do {
         limparTela();
-        printf("========== RELATORIOS ==========\n");
+        printf("\033[33m========== RELATORIOS ==========\033[0m\n");
         printf("1 - Media geral de producao de mel\n");
         printf("2 - Media de valores dos sensores\n");
         printf("3 - Quantidade de abelhas por regiao\n");
         printf("4 - Identificador de especie (BeeVision)\n");
         printf("0 - Voltar ao menu principal\n");
-        printf("===============================\n");
+        printf("\033[33m===============================\033[0m\n");
         
-        op = lerInteiro("Opcao: ", 0, 4);
+        op = lerInteiro("\033[33mOpcao:\033[0m ", 0, 4);
         
         switch (op) {
             case 1: mediaProducaoMel(); break;

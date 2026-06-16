@@ -7,10 +7,10 @@ int qtdA = 0;
 
 void cadastrarAbelha() {
     limparTela();
-    printf("========== CADASTRAR ABELHA ==========\n\n");
+    printf("\033[33m========== CADASTRAR ABELHA ==========\033[0m\n\n");
     
     if (qtdA >= MAX_ABELHAS) {
-        printf("Limite de abelhas atingido!\n");
+        printf("\033[31mLimite de abelhas atingido!\033[0m\n");
         pausar();
         return;
     }
@@ -24,13 +24,13 @@ void cadastrarAbelha() {
     
     
     abelhas[qtdA++] = nova; //nova também é uma variável da estrutura Abelha
-    printf("\nAbelha cadastrada com sucesso!\n");
+    printf("\n\033[32mAbelha cadastrada com sucesso!\033[0m\n");
     pausar();
 }
 
 void listarAbelhas() {
     limparTela();
-    printf("========== LISTAR ABELHAS ==========\n\n");
+    printf("\033[33m========== LISTAR ABELHAS ==========\033[0m\n\n");
 
     if (qtdA == 0) {
         printf("Nao ha abelhas cadastradas!\n");
@@ -52,7 +52,7 @@ void listarAbelhas() {
 
 void alterarAbelha() {
     limparTela();
-    printf("========== ALTERAR DADOS DA ABELHA ==========\n\n");
+    printf("\033[33m========== ALTERAR DADOS DA ABELHA ==========\033[0m\n\n");
     
     if (qtdA == 0) {
         printf("Nao ha abelhas cadastradas!\n");
@@ -82,7 +82,7 @@ void alterarAbelha() {
             lerString("  Nova regiao           : ", abelhas[i].regiao, 50);
             abelhas[i].producaoMel = lerFloat("  Nova producao de mel  : ", 0);
             limparTela();
-            printf("Abelha alterada com sucesso!\n");
+            printf("\033[32mAbelha alterada com sucesso!\033[0m\n");
             break;
         }
     }
@@ -95,7 +95,7 @@ void alterarAbelha() {
 
 void buscarAbelha() {
     limparTela();
-    printf("========== BUSCAR ABELHA ==========\n\n");
+    printf("\033[33m========== BUSCAR ABELHA ==========\033[0m\n\n");
     
     if (qtdA == 0) {
         printf("Nao ha abelhas cadatradas!\n");
@@ -118,14 +118,14 @@ void buscarAbelha() {
             encontrou = 1;
         }
     }
-    if (encontrou == 0) printf("\nAbelha nao encontrada!\n");
+    if (encontrou == 0) printf("\n\033[31mAbelha nao encontrada!\033[0m\n");
     
     pausar();
 }
 
 void removerAbelha() {
     limparTela();
-    printf("========== REMOVER ABELHA ==========\n\n");
+    printf("\033[33m========== REMOVER ABELHA ==========\033[0m\n\n");
     
     if (qtdA == 0) {
         printf("Nao ha abelhas cadastradas!\n");
@@ -142,7 +142,7 @@ void removerAbelha() {
                 abelhas[j].id = j;
             }
             qtdA--;
-            printf("\nAbelha removida com sucesso!\n");
+            printf("\n\033[32mAbelha removida com sucesso!\033[0m\n");
             pausar();
             return;
         }
@@ -156,16 +156,16 @@ void menuAbelhas() {
     int op;
     do {
         limparTela();
-        printf("========== GERENCIAR ABELHAS ==========\n");
+        printf("\033[33m========== GERENCIAR ABELHAS ==========\033[0m\n");
         printf("1 - Cadastrar abelha\n");
         printf("2 - Listar abelhas\n");
         printf("3 - Buscar abelha\n");
         printf("4 - Alterar dados\n");
         printf("5 - Remover abelha\n");
         printf("0 - Voltar ao menu principal\n");
-        printf("======================================\n");
+        printf("\033[33m======================================\033[0m\n");
         
-        op = lerInteiro("Opcao: ", 0, 5);
+        op = lerInteiro("\033[33mOpcao:\033[0m ", 0, 5);
         
         switch (op) {
             case 1: cadastrarAbelha(); break;

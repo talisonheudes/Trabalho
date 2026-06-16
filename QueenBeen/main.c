@@ -10,13 +10,13 @@ int main() {
   
     do {
         limparTela();
-        printf("\n========== QUEEN BEEN ==========\n");
+        printf("\033[33m========== QUEEN BEEN ==========\033[0m\n");
         printf("1 - Gerenciar abelhas\n");
         printf("2 - Gerenciar sensores\n");
         printf("3 - Relatorios\n");
-        printf("0 - Sair\n");
-        printf("===============================================\n");
-        boi = lerInteiro("Opcao: ", 0, 3);
+        printf("\033[31m0 - Sair\033[0m\n");
+        printf("\033[33m================================\033[0m\n");
+        boi = lerInteiro("\033[33mOpcao:\033[0m ", 0, 3);
         
         switch (boi) {
             case 1: menuAbelhas(); break;
