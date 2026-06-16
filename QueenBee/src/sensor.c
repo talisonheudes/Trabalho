@@ -89,22 +89,47 @@ void alterarSensor() {
         return;
     }
 
+    // Lista sensores
     for (int i = 0; i < qtdS; i++) {
         printf("ID: %d - %s\n", sensores[i].id, sensores[i].tipo);
     }
     
-    int id = lerInteiro("\nID do sensor: ", 0, qtdS - 1);
+    int id = lerInteiro("\nID do sensor para alterar: ", 0, qtdS - 1);
     
     for (int i = 0; i < qtdS; i++) {
         if (sensores[i].id == id) {
-            lerString("Novo tipo: ", sensores[i].tipo, 50);
+            // Menu para escolher o novo tipo
+            int opcaoTipo;
+            printf("\nNovo tipo do sensor:\n");
+            printf("1 - Temperatura\n");
+            printf("2 - Umidade\n");
+            printf("3 - Luminosidade\n");
+            printf("Escolha: ");
+            scanf("%d", &opcaoTipo);
+            getchar();
+            
+            switch(opcaoTipo) {
+                case 1:
+                    strcpy(sensores[i].tipo, "temperatura");
+                    break;
+                case 2:
+                    strcpy(sensores[i].tipo, "umidade");
+                    break;
+                case 3:
+                    strcpy(sensores[i].tipo, "luminosidade");
+                    break;
+                default:
+                    printf("Opcao invalida! Tipo mantido.\n");
+                    break;
+            }
+            
             sensores[i].valor = lerFloat("Novo valor: ", 0);
             sensores[i].abelhaId = lerInteiro("Novo ID da abelha: ", 0, qtdA - 1);
-            printf("\nSensor alterado!\n");
+            
+            printf("\n\033[32mSensor alterado com sucesso!\033[0m\n");
             break;
         }
     }
-    
     pausar();
 }
 
