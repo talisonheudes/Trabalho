@@ -137,18 +137,29 @@ void removerAbelha() {
     
     for (int i = 0; i < qtdA; i++) {
         if (abelhas[i].id == id) {
-            for (int j = i; j < qtdA - 1; j++) {
-                abelhas[j] = abelhas[j + 1];
-                abelhas[j].id = j;
+            int opcao;
+            printf("\n\033[33mDeseja realmente remover?\033[0m\n");
+            printf("1 SIM\n");
+            printf("[2 NAO\n");
+            printf("Escolha: ");
+            scanf("%d", &opcao);
+            
+            if (opcao == 1) {
+                for (int j = i; j < qtdA - 1; j++) {
+                    abelhas[j] = abelhas[j + 1];
+                    abelhas[j].id = j;
+                }
+                qtdA--;
+                printf("\n\033[32mAbelha removida com sucesso!\033[0m\n");
+            } else {
+                printf("\n\033[32mRemocao cancelada!\033[0m\n");
             }
-            qtdA--;
-            printf("\n\033[32mAbelha removida com sucesso!\033[0m\n");
             pausar();
             return;
         }
     }
-
-    printf("\nAbelha nao encontrada!\n");
+    
+    printf("\n\033[31mAbelha nao encontrada!\033[0m\n");
     pausar();
 }
 
