@@ -10,7 +10,7 @@ int main() {
   
     do {
         limparTela();
-        printf("\033[33m========== QUEEN BEEN ==========\033[0m\n");
+        printf("\033[33m========== QUEEN BEE ==========\033[0m\n");
         printf("1 - Gerenciar abelhas\n");
         printf("2 - Gerenciar sensores\n");
         printf("3 - Relatorios\n");
